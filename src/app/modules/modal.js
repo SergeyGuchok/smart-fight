@@ -26,7 +26,7 @@ export class Modal {
 
       modal.appendChild(task);
     });
-    document.querySelector('.canvas-wrapper').appendChild(modal);
+    document.body.appendChild(modal);
   }
 
   getTaskNumber(task) {

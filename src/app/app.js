@@ -6,6 +6,7 @@ import { Tasks } from './modules/tasks';
 
 export class App {
   constructor(name) {
+    this.time = Date.now();
     this.location = new Location();
     this.hero = new Hero(name);
     this.enemy = new Enemy();
@@ -106,7 +107,6 @@ export class App {
     task._createTask();
     document.querySelector('.modal').style.display = 'none';
     this._addTaskAnswerEvent(task);
-
     return;
   }
 
@@ -119,6 +119,7 @@ export class App {
 
   // event to check if user answered right
   _checkForHit(task) {
+    console.log(1);
     const inputValue = document.querySelector('.task-answer').children[0].value
     if (inputValue === '') {
       return;
