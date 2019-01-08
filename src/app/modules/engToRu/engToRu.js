@@ -2,12 +2,14 @@ import './engToRu.scss';
 
 export class EngToRu {
   constructor() {
-    this.russianWords = ['Год', 'Январь', 'Март', 'Апрель', 'Кот', 'Дом', 'Собака', 'Мама', 'Отец', 'Лошадь', 'Улица', 'Красивый', 'Печенье', 'Кровать'];
+    this.russianWords = ['Год', 'Январь', 'Март', 'Апрель', 'Кот', 'Дом', 'Собака',
+      'Мама', 'Отец', 'Лошадь', 'Улица', 'Красивый', 'Печенье', 'Кровать'];
     this.randomWord = null;
-    this.englishWords = ['Year', 'January', 'March', 'April', 'Cat', 'House', 'Dog', 'Mom', 'Dad', 'Horse', 'Street', 'Beautiful', 'Cookie', 'Bed'];
+    this.englishWords = ['Year', 'January', 'March', 'April', 'Cat', 'House',
+      'Dog', 'Mom', 'Dad', 'Horse', 'Street', 'Beautiful', 'Cookie', 'Bed'];
   }
 
-  _createTask() {
+  createTask() {
     this._calculateRandomWord();
     const modalWrapper = document.createElement('div');
     const taskWrapper = document.createElement('div');
@@ -48,15 +50,17 @@ export class EngToRu {
   }
 
   async _calculateRandomWord() {
-    this.randomWord = Math.floor( Math.random() * 14);
+    this.randomWord = Math.floor(Math.random() * 14);
   }
 
   get getTaskInfo() {
-    return { name: 'Translation', imgSrc: './src/img/translation.png' }
+    // eslint
+    this.nothing = 'nothing';
+    return { name: 'Translation', imgSrc: './src/img/translation.png' };
   }
 
-  _calculateAnswer(answer) {
-    if ( this.russianWords[this.randomWord].toLowerCase() === answer.toLowerCase()) {
+  calculateAnswer(answer) {
+    if (this.russianWords[this.randomWord].toLowerCase() === answer.toLowerCase()) {
       return true;
     }
     return false;

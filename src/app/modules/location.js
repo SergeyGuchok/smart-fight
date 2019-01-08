@@ -1,9 +1,9 @@
 export class Location {
   constructor() {
-    this.imgSource = './src/img/'
-    this.locationsSrc = ['background-1.png', 'background-2.png', 'background-3.png', 'background-4.png']
+    this.imgSource = './src/img/';
+    this.locationsSrc = ['background-1.png', 'background-2.png', 'background-3.png', 'background-4.png'];
     this.locations = ['City', 'Forest', 'Mars', 'Moon'];
-  }  
+  }
 
   _createLocations() {
     const locationsWrapper = document.createElement('div');
@@ -27,11 +27,11 @@ export class Location {
 
       locationsWrapper.appendChild(locationWrapper);
 
-      locationWrapper.addEventListener('mouseover', function() {
+      locationWrapper.addEventListener('mouseover', function changeStyle() {
         this.style.width = '100%';
         this.children[0].style.opacity = 1;
       });
-      locationWrapper.addEventListener('mouseleave', function() {
+      locationWrapper.addEventListener('mouseleave', function resetStyle() {
         this.style.width = '25%';
         this.children[0].style.opacity = 0;
       });
@@ -42,8 +42,7 @@ export class Location {
     return locationsWrapper;
   }
 
-
-  chooseLocation(handleLocationChoose) {
+  chooseLocation() {
     return this._createLocations();
   }
 }

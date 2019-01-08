@@ -91,7 +91,10 @@ main {
   align-items: center;
   width: 100%;
   height: 80%;
-  background-color: pink;
+  background-color: rgba(0,0,0, 0.8);
+  background-image: url('../img/screenshot-1.png');
+  background-size: cover;
+  background-blend-mode: darken;
 }
 
 .game-window a {
@@ -138,20 +141,18 @@ main {
   max-width: 1000px;
 }
 
-.game-screenshots ul{
+.game-screenshots ul {
   display: flex;
+  flex-flow: column;
 }
 
 .game-screenshots ul li {
-  width: 25%;
-  height: 50px;
-  background-color: red;
+  margin: 5px 0;
   border: 1px solid black;
   transition: width 0.5s;
 }
-
-.game-screenshots ul li:hover {
-  width: 50%;
+.game-screenshots ul li img {
+  width: 100%;
 }
 
 .yellow-star {

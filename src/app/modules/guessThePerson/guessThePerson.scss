@@ -1,0 +1,74 @@
+.guess-the-person-wrapper {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  background-color: rgba(#000000, 0.8);
+  z-index: 5;
+
+  color: #ffffff;
+  animation: fadeIn 1s linear;
+}
+
+.guess-the-person-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 50%;
+  height: 70%;
+  p:first-of-type {
+    font-size: 28px;
+  }
+  p:last-of-type {
+    position: relative;
+    margin-top: 20px;
+    font-size: 32px;
+    transition: transform 0.2s;
+    text-align: center;
+    &::after {
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      content: '';
+    }
+    &:hover {
+      transform: scale(1.02);
+    }
+  }
+}
+
+.person-answer {
+  img {
+    height: 120px;
+    margin: 0 10px;
+    border: 2px solid purple;
+    transition: border 0.2s;
+  }
+  input {
+    display: none;
+  }
+}
+
+.yellow-border {
+  border: 2px solid yellow !important;
+}
+
+.yellow-border-active {
+  border: 2px solid yellow !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

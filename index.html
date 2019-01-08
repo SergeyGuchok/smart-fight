@@ -2,20 +2,48 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title></title>
+  <title>Game</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="./dist/main.js" defer></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+  <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+  <link rel="stylesheet" href="./src/landing-files/css/reset.css">
+  <link rel="stylesheet" href="./src/landing-files/css/style.css">  
 </head>
 <body>
-  <p class="records-table">Results</p>
-  <p class="tips">Text goes here</p>
-  <div class="canvas-wrapper">
-    <canvas id="canvas" class="canvas">
-      Your browser doesn`t support this awesome game, you gotta update it :P
-    </canvas>
-  </div>
-  <audio class="explosion" src="./src/audio/explosion.mp3"></audio>
-  <audio class="lightning" src="./src/audio/lightning.mp3"></audio>
-  <audio class="background-audio" src="./src/audio/background-music.mp3" loop"></audio>
+  <header class="main-header">
+    <nav class="nav-links">
+      <h1><a href="#">Smart fight</a></h1>
+      <ul>
+        <li><i class="fas fa-star yellow-star"><a href="#author" class="links"></i>Author</a></li>
+        <li><i class="fas fa-star yellow-star"><a href="#game-screenshots" class="links"></i>Screenshots</a></li>
+        <li><i class="fas fa-star yellow-star"><a href="./game.html" class="links"></i>Get started!</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="game-wrapper">
+      <div class="game-window">        
+        <a href="./game.html" class="get-started">Start playing</a>
+      </div>
+    </div>
+    <div id="author" class="author">
+      <div class="author-picture">
+        <img src="./src/landing-files/img/author.jpg" alt="author-image">
+      </div>
+      <div class="author-info">
+        <h2>Sergey Guchok</h2>
+        <p>18 years old BSUIR student who loves to code :P</p>
+        <a href="https://github.com/SergeyGuchok" target="_blank">GitHub</a>
+      </div>
+    </div>
+    <div id="game-screenshots" class="game-screenshots">
+      <ul>
+        <li><img src="./src/landing-files/img/screenshot-1.png" alt="screenshot-1"></li>
+        <li><img src="./src/landing-files/img/screenshot-2.png" alt="screenshot-2"></li>
+        <li><img src="./src/landing-files/img/screenshot-3.png" alt="screenshot-3"></li>
+        <li><img src="./src/landing-files/img/screenshot-4.png" alt="screenshot-4"></li>
+      </ul>
+    </div>
+  </main>
 </body>
 </html>

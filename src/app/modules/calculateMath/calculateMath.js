@@ -1,3 +1,4 @@
+/* eslint no-eval: 0 */
 import './calculateMath.scss';
 
 export class CalculateMath {
@@ -8,7 +9,7 @@ export class CalculateMath {
     this.equation = null;
   }
 
-  _createTask() {
+  createTask() {
     this._generateEquation();
     const modalWrapper = document.createElement('div');
     const taskWrapper = document.createElement('div');
@@ -48,19 +49,21 @@ export class CalculateMath {
   }
 
   _generateEquation() {
-    let operation = this.operation[Math.floor(Math.random() * 4)];
-    let firstNumber = Math.floor(Math.random() * 100) + 5;
-    let second = Math.floor(Math.random() * 100) + 5;
-    this.equation = `${firstNumber} ${operation} ${second}`
+    const operation = this.operation[Math.floor(Math.random() * 4)];
+    const firstNumber = Math.floor(Math.random() * 100) + 5;
+    const second = Math.floor(Math.random() * 100) + 5;
+    this.equation = `${firstNumber} ${operation} ${second}`;
     this.answer = eval(this.equation);
   }
 
   get getTaskInfo() {
-    return { name: 'Calculation', imgSrc: './src/img/calculation.png' }
+    // elsint
+    this.nothing = 'nothing';
+    return { name: 'Calculation', imgSrc: './src/img/calculation.png' };
   }
 
-  _calculateAnswer(answer) {
-    if ( this.answer == answer) {
+  calculateAnswer(answer) {
+    if (this.answer === -(-answer)) {
       return true;
     }
     return false;

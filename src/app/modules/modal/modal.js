@@ -6,12 +6,12 @@ export class Modal {
   }
 
   init() {
-    const modal = document.createElement('div'); 
-    modal.classList.add('modal');   
-    this.tasks.forEach(item => {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    this.tasks.forEach((item) => {
       const task = document.createElement('div');
       const taskName = document.createElement('p');
-      const taskImage = document.createElement('img');      
+      const taskImage = document.createElement('img');
 
       const taskInfo = item.getTaskInfo;
 
@@ -31,7 +31,7 @@ export class Modal {
 
   getTaskNumber(task) {
     let taskToReturn = null;
-    this.tasks.forEach(item => {
+    this.tasks.forEach((item) => {
       if (item.getTaskInfo.name === task) {
         taskToReturn = item;
       }

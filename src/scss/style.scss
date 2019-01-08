@@ -145,6 +145,128 @@ body {
   }
 }
 
+.level-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 500px;
+  height: 200px;
+  background-color: rgba(lighten(purple, 30%), 0.8);
+  color: #ffffff;
+  border-radius: 25px;
+  transform: translate3d(-50%, -50%, 0);
+  animation: fadeIn 1s linear;
+
+  p:first-of-type {
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 0 0 1px 1px #000000;
+  }
+
+  p:last-of-type {
+    color: #000000;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}
+
+.results-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  flex-wrap: wrap;
+  width: 800px;
+  background-color: rgba(#000000, 0.9);
+  box-shadow: 0 0 1px #ffffff;
+  transform: translate3d(-50%, -50%, 0);
+  color: #ffffff;
+  animation: fadeIn 1s linear;
+  .close-results-modal {
+    position: absolute;
+    right: 25px;
+    top: 0px;
+    font-size: 25px;
+    color: #ffffff;
+    cursor: pointer;
+    transition: color 0.2s;
+    &:hover {
+      color: grey;
+    }
+  }
+  & > p {
+    margin-top: 15px;
+    font-size: 25px;
+    color: #ffffff;
+  }
+  .results-list {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    padding: 10px;
+    div {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+      p {
+        width: 33%;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.nickname-popup {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 600px;
+  height: 400px;
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 0 1px #000000;
+  transform: translate3d(-50%, -50%, 0);
+  p:first-of-type {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  p:last-of-type {
+    max-width: 120px;
+    padding: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    cursor: pointer;
+    transition: border 0.2s;
+    &:hover {
+      border: 1px solid yellow;
+    }
+  }
+  input {
+    margin: 15px 0;
+    padding: 5px;
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #000000;
+  }
+}
+
 @keyframes AnimationName { 
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}

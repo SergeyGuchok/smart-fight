@@ -1,20 +1,20 @@
 export class Enemy {
-  constructor () {
+  constructor() {
     this.name = null;
     this.healthPoints = 100;
     this.heroSrc = './src/img/characters/';
   }
 
-  _loadEnemy() {
+  loadEnemy() {
     const head = new Image();
     const body = new Image();
     const weapon = new Image();
 
-    let enemyNumber = Math.floor(Math.random() * 4) + 1;
+    const enemyNumber = Math.floor(Math.random() * 4) + 1;
 
-    head.src = this.heroSrc + `${enemyNumber}-head.png`;
-    body.src = this.heroSrc + `${enemyNumber}-body.png`;
-    weapon.src = this.heroSrc + `${enemyNumber}-weapon.png`;
+    head.src = `${this.heroSrc}${enemyNumber}-head.png`;
+    body.src = `${this.heroSrc}${enemyNumber}-body.png`;
+    weapon.src = `${this.heroSrc}${enemyNumber}-weapon.png`;
 
     return [head, body, weapon];
   }
@@ -33,13 +33,16 @@ export class Enemy {
   }
 
   _createName() {
+    // eslint
+    this.nothing = 'nothing';
+
     const adjectives = ['Ugly', 'Fearful', 'Wicked', 'Evil', 'Awful'];
     const kind = ['Ogre', 'Troll', 'Elf', 'Ork', 'Gnome', 'Goblin'];
     const name = ['Darrizog', 'Rotlilag', 'Bomrator', 'Xarex', 'Juju', 'Jumonal'];
 
-    let randomName = Math.floor(Math.abs(Math.random() * 10 - 5));
-    let randomAdjectives = Math.floor(Math.abs(Math.random() * 10 - 5));
-    let randomKind = Math.floor(Math.abs(Math.random() * 10 - 5));
+    const randomName = Math.floor(Math.abs(Math.random() * 10 - 5));
+    const randomAdjectives = Math.floor(Math.abs(Math.random() * 10 - 5));
+    const randomKind = Math.floor(Math.abs(Math.random() * 10 - 5));
 
     return `${adjectives[randomAdjectives]} ${kind[randomKind]} ${name[randomName]}`;
   }
