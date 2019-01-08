@@ -1,0 +1,39 @@
+.audio-wrapper {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+  background-color: rgba(#000000, 0.8);
+  z-index: 5;
+  color: #ffffff;
+  animation: fadeIn 1s linear;
+}
+
+.audio-task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 50%;
+  height: 70%;
+  p{
+    font-size: 28px;
+  }
+  img {
+    margin-top: 20px;
+    height: 50px;
+    cursor: pointer;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

@@ -4,7 +4,7 @@ export class EngToRu {
   constructor() {
     this.russianWords = ['Год', 'Январь', 'Март', 'Апрель', 'Кот', 'Дом', 'Собака', 'Мама', 'Отец', 'Лошадь', 'Улица', 'Красивый', 'Печенье', 'Кровать'];
     this.randomWord = null;
-    this.englishWords = ['Year', 'January', 'March', 'April', 'Cat', 'House', 'Dog', 'Mom', 'Dad', 'Horse', 'Street', 'Beautiful', 'Cookie', 'Bed']
+    this.englishWords = ['Year', 'January', 'March', 'April', 'Cat', 'House', 'Dog', 'Mom', 'Dad', 'Horse', 'Street', 'Beautiful', 'Cookie', 'Bed'];
   }
 
   _createTask() {
@@ -47,7 +47,7 @@ export class EngToRu {
     game.appendChild(modalWrapper);
   }
 
-  _calculateRandomWord() {
+  async _calculateRandomWord() {
     this.randomWord = Math.floor( Math.random() * 14);
   }
 

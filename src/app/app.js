@@ -47,7 +47,7 @@ export class App {
   init() {
     this.tipPanel.textContent = 'Choose location';
 
-    // this._loadAudio();
+    this._loadAudio();
 
     const canvas = document.getElementById('canvas');
     const ctx = canvas.getContext('2d');
@@ -65,8 +65,8 @@ export class App {
   }
 
   _loadAudio() {
-    const audio = new Audio('./src/audio/background-music.mp3');
-    audio.volume = 0.06;
+    const audio = document.querySelector('.background-audio');
+    audio.volume = 0.05;
     audio.play();
     return;
   }
