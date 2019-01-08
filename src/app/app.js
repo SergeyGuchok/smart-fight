@@ -78,6 +78,7 @@ export class App {
   _loadAudio() {
     const audio = document.querySelector('.background-audio');
     audio.volume = 0.05;
+    audio.load();
     audio.play();
     return this;
   }
