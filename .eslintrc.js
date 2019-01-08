@@ -5,7 +5,6 @@ module.exports = {
   },
   "rules": {
     "linebreak-style": 0,
-    "enforceInMethodNames": true,
-    "allowAfterThis": true
+    "no-underscore-dangle": ["error", { "enforceInMethodNames": true }]
   }
 };

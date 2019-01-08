@@ -102,6 +102,49 @@ body {
   opacity: 0;
 }
 
+.records-table {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  padding: 15px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.end-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  width: 500px;
+  height: 200px;
+  background-color: rgba(lighten(purple, 30%), 0.8);
+  color: #ffffff;
+  border-radius: 25px;
+  transform: translate3d(-50%, -50%, 0);
+  animation: fadeIn 1s linear;
+  
+  p:first-of-type {
+    font-size: 30px;
+    color: #ffffff;
+    text-shadow: 0 0 1px 1px #000000;
+  }
+
+  p:last-of-type {
+    color: #000000;
+    margin-top: 25px;
+    padding: 15px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    cursor: pointer;
+  }
+}
+
 @keyframes AnimationName { 
     0%{background-position:0% 51%}
     50%{background-position:100% 50%}
@@ -139,4 +182,14 @@ body {
     left: 83%;
   }
 }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 

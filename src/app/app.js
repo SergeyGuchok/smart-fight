@@ -119,7 +119,6 @@ export class App {
 
   // event to check if user answered right
   _checkForHit(task) {
-    console.log(1);
     const inputValue = document.querySelector('.task-answer').children[0].value
     if (inputValue === '') {
       return;
@@ -200,9 +199,6 @@ export class App {
     }
   }
 
-  _drawWinner() {
-
-  }
 
   async _castSpell(whoToAttack) {
     const wrapper = document.querySelector('.canvas-wrapper');
@@ -294,6 +290,47 @@ export class App {
     canvasWrapper.appendChild(enemyBarWrapper);
     canvasWrapper.appendChild(heroBarWrapper);
     return;
+  }
+
+  _drawWinner() {
+    let winner = null;
+    if (this.hero.getHP === 0) {
+      winner = this.enemy
+    } else {
+      winner = this.hero;
+    }
+
+    this.time = (Date.now() - this.time) / 1000;
+    this._showEndModal(winner);
+  }
+
+  _showEndModal(winner) {
+    const endModal = document.createElement('div');
+    const modalText = document.createElement('p');
+    const endGame = document.createElement('p');
+
+    endModal.classList.add('end-modal');
+
+    if ( winner === this.enemy ) {
+      this.tipPanel.textContent = 'You lost :(';
+      modalText.textContent = 'You lost. Better luck next time!';
+    } else {
+      this.tipPanel.textContent = 'Yay !! :)';
+      modalText.textContent = 'You won! Congratulations!';
+    }
+
+    endGame.textContent = 'End game';
+
+    endModal.appendChild(modalText);
+    endModal.appendChild(endGame);
+
+    endGame.addEventListener('click', this._showResults.bind(this));
+
+    document.body.appendChild(endModal);
+  }
+
+  _showResults() {
+    document.body.removeChild(document.querySelector('.end-modal'));
   }
 }
 
